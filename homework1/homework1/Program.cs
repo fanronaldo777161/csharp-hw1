@@ -86,7 +86,17 @@
                     return Seasons.Autumn;
             }
         }
-
+        //n строк вида месяц сезон
+        public static void nstrseasons(int n)
+        {
+            Random r = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                int m = r.Next(1, 13);
+                Seasons s = numtoseason(m);
+                Console.WriteLine($"Месяц {m}, его сезон: {s}");
+            }
+        }
         static void Main(string[] args)
         {
             //task1
@@ -116,6 +126,9 @@
             Console.WriteLine(numtoseason(5));
             Console.WriteLine(numtoseason(11));
             Console.WriteLine(numtoseason(1));
+            //task8
+            nstrseasons(4);
+
 
         }
     }
