@@ -26,6 +26,11 @@
             if (d == 0) return 1;
             return 0;
         }
+        //минимум из вещ числе 
+        public static double minofdouble(double a, double b)
+        {
+            return a < b ? a : b;
+        }
         static void Main(string[] args)
         {
             //task1
@@ -40,7 +45,10 @@
             Console.WriteLine(countofroots(1, -5, 6));
             Console.WriteLine(countofroots(2, 0, 0));
             Console.WriteLine(countofroots(10, 0, 1));
-
+            //task4
+            Console.WriteLine(minofdouble(3.5, 1.2));
+            Console.WriteLine(minofdouble(3.5, 7));
+            Console.WriteLine(minofdouble(-3.5, 1.2));
 
         }
     }
