@@ -31,6 +31,25 @@
         {
             return a < b ? a : b;
         }
+        //произв всех чет чисел от а до б
+        public static double powofoddnum(int a, int b)
+        {
+            int s = Math.Min(a, b);
+            int e = Math.Max(a, b);
+
+            double p = 1;
+            bool f = false;
+
+            for (int i = s; i <= e; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    p *= i;
+                    f = true;
+                }
+            }
+            return  p ;
+        }
         static void Main(string[] args)
         {
             //task1
@@ -49,6 +68,10 @@
             Console.WriteLine(minofdouble(3.5, 1.2));
             Console.WriteLine(minofdouble(3.5, 7));
             Console.WriteLine(minofdouble(-3.5, 1.2));
+            //task5
+            Console.WriteLine(powofoddnum(1, 5));
+            Console.WriteLine(powofoddnum(2, 7));
+            //task6
 
         }
     }
