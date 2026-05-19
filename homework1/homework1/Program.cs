@@ -1,5 +1,6 @@
 ﻿namespace homework1
 {
+    public enum Seasons { Winter, Spring, Summer, Autumn }
     internal class Program
     {
         //обнуляет разряд десятков
@@ -64,6 +65,28 @@
             }
             return (l, d);
         }
+        //время года по номеру месяца
+        public static Seasons numtoseason(int m)
+        {
+            switch (m)
+            {
+                case 12:
+                case 1:
+                case 2:
+                    return Seasons.Winter;
+                case 3:
+                case 4:
+                case 5:
+                    return Seasons.Spring;
+                case 6:
+                case 7:
+                case 8:
+                    return Seasons.Summer;
+                default:
+                    return Seasons.Autumn;
+            }
+        }
+
         static void Main(string[] args)
         {
             //task1
@@ -89,6 +112,11 @@
             var a = new int[] { 1, 2, 3, 4, 5, 6, 0, 7, 7, 7, 7 };
             Console.WriteLine(nummenk(10,a));
             Console.WriteLine(nummenk(3, a));
+            //task7
+            Console.WriteLine(numtoseason(5));
+            Console.WriteLine(numtoseason(11));
+            Console.WriteLine(numtoseason(1));
+
         }
     }
 }
