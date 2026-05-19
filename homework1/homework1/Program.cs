@@ -50,6 +50,20 @@
             }
             return  p ;
         }
+        //кол-во чисел в массиве до 0 меньше к
+        public static (int l, int d) nummenk(int k, int[] v)
+        {
+            int l = 0;
+            int d = 0;
+
+            foreach (var i in v)
+            {
+                if (i == 0) break;
+                if (i < k) l+=1;
+                if (i % k == 0) d+=1;
+            }
+            return (l, d);
+        }
         static void Main(string[] args)
         {
             //task1
@@ -72,7 +86,9 @@
             Console.WriteLine(powofoddnum(1, 5));
             Console.WriteLine(powofoddnum(2, 7));
             //task6
-
+            var a = new int[] { 1, 2, 3, 4, 5, 6, 0, 7, 7, 7, 7 };
+            Console.WriteLine(nummenk(10,a));
+            Console.WriteLine(nummenk(3, a));
         }
     }
 }
